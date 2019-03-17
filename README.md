@@ -14,4 +14,9 @@ Now its time to copy the data structure to the hard drive directly using the ins
 ## Search in the data structure
 Finally, we need a part of this Java app to support the functionality of searching the data structure by entering a specific word as an input and get all the files that contain it and all the positions of the word in them as an output. This will be done using the instructions below
 * At first we have to write a function that performs **Binary Search** in a file and finds any word in the dictionary. In order to do that we can read the middle page from the dictionary by bringing it to the main memory (sth that costs 1 drive access) and perform the binary search in to that page (sth that does not cost anything in drive accesses). If the word is found then the function returns the "Name of file.txt" and the integer "#bytes from the beginning of the document". If the word is not found then we keep searching in the middle page from the left or the right half of the file depending on if the word we are lookin for is alphabetically before or after the words in the middle page of the file. We continue the same procedure if needed.
-* Every page reading costs a hard drive access. Every page reading in the index also costs a hard drive access. 
+* Every page reading costs a hard drive access. Every page reading in the index also costs a hard drive access. The output on the screen must be like this,  
+    **document "c.txt" contains the word apple in position 3**  
+    **document "a.txt" contains the word apple in position 5**  
+    **document "b.txt" contains the word apple in position 18**  
+    **document "c.txt" contains the word apple in position 120** 
+* For every search a number **k** should be returned that stands for how many hard drive accesses costed that search.
